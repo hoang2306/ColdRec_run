@@ -42,6 +42,7 @@ class LightGCN(BaseColdStartTrainer):
         model.eval()
         self.user_emb, self.item_emb = self.best_user_emb, self.best_item_emb
         if self.args.save_emb:
+            print(f'save embedding')
             # torch.save(self.user_emb, f"{self.args.dataset}_cold_{self.args.cold_object}_{self.args.model}_user_emb.pt")
             # torch.save(self.item_emb, f"{self.args.dataset}_cold_{self.args.cold_object}_{self.args.model}_item_emb.pt")
             torch.save(self.item_emb, f'/kaggle/working/ColdRec_run/data/{self.args.dataset}/{self.args.dataset}_cold_{self.args.cold_object}_{self.args.model}_item_emb.pt')
