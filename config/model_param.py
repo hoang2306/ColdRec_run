@@ -1,6 +1,11 @@
 def model_specific_param(model_name, parser):
     if model_name == 'KNN':
         parser.add_argument('--knn_num', type=int, default=5)
+    elif model_name == 'LightGCN':
+        pass
+    elif model_name == 'SimGCL':
+        # parser.add_argument('--layers', type=int, default=1)
+        pass 
     elif model_name == 'ALDI':
         parser.add_argument('--alpha', type=float, default=0.9)
         parser.add_argument('--beta', type=float, default=0.05)
